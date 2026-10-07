@@ -69,20 +69,20 @@
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
       <div class="flex items-center gap-2">
         <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span id="topNoticeText">منصة مسافرين تعمل بنجاح في الوضع التفاعلي المباشر (Production Architecture)</span>
+        <span id="topNoticeText">منصة مسافرين تعمل بنجاح في الوضع التفاعلي المباشر (22 دولة عربية)</span>
       </div>
       <div class="flex items-center gap-4 text-slate-300 text-xs">
         <span class="hidden md:inline-flex items-center gap-1.5">
           <i data-lucide="phone-call" class="w-3.5 h-3.5 text-amber-400"></i>
           <span>الخط الساخن: 19820</span>
         </span>
-        <button onclick="toggleView('admin')" class="px-2.5 py-1 rounded bg-slate-800 text-amber-300 font-bold hover:bg-slate-700 transition flex items-center gap-1">
-          <i data-lucide="shield-alert" class="w-3 h-3"></i>
-          <span>لوحة الإدارة (سارة إبراهيم)</span>
+        <button onclick="toggleView('login')" class="px-2.5 py-1 rounded bg-slate-800 text-sky-300 font-bold hover:bg-slate-700 transition flex items-center gap-1">
+          <i data-lucide="log-in" class="w-3 h-3"></i>
+          <span>تسجيل دخول العميل</span>
         </button>
-        <button onclick="toggleView('dashboard')" class="px-2.5 py-1 rounded bg-slate-800 text-sky-300 font-bold hover:bg-slate-700 transition flex items-center gap-1">
-          <i data-lucide="layout-dashboard" class="w-3 h-3"></i>
-          <span>حساب العميل (أحمد مصطفى)</span>
+        <button onclick="toggleView('admin-login')" class="px-2.5 py-1 rounded bg-slate-800 text-amber-300 font-bold hover:bg-slate-700 transition flex items-center gap-1">
+          <i data-lucide="shield-alert" class="w-3 h-3"></i>
+          <span>لوحة الإدارة (عثمان المهدي)</span>
         </button>
       </div>
     </div>
@@ -119,6 +119,8 @@
           <button onclick="toggleView('transfers')" class="nav-item px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-[#0284C7] hover:bg-slate-100">توصيل المطار</button>
           <button onclick="toggleView('visa')" class="nav-item px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-[#0284C7] hover:bg-slate-100">التأشيرات</button>
           <button onclick="toggleView('insurance')" class="nav-item px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-[#0284C7] hover:bg-slate-100">تأمين السفر</button>
+          <button onclick="toggleView('about')" class="nav-item px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-[#0284C7] hover:bg-slate-100">من نحن</button>
+          <button onclick="toggleView('contact')" class="nav-item px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-[#0284C7] hover:bg-slate-100">اتصل بنا</button>
         </nav>
 
         <!-- Actions -->
@@ -127,13 +129,17 @@
             <i data-lucide="globe" class="w-3.5 h-3.5 text-[#0284C7]"></i>
             <span id="langBtnText">English</span>
           </button>
-          <button onclick="toggleView('dashboard')" class="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200">
-            <i data-lucide="layout-dashboard" class="w-3.5 h-3.5 text-[#0284C7]"></i>
-            <span>حسابي</span>
+          <button onclick="toggleView('login')" class="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200">
+            <i data-lucide="user" class="w-3.5 h-3.5 text-[#0284C7]"></i>
+            <span>تسجيل الدخول</span>
           </button>
-          <button onclick="toggleView('admin')" class="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold bg-[#0B192C] hover:bg-[#1E3E62] text-white">
+          <button onclick="toggleView('register')" class="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold bg-[#0284C7] hover:bg-[#0369A1] text-white">
+            <i data-lucide="user-plus" class="w-3.5 h-3.5"></i>
+            <span>إنشاء حساب</span>
+          </button>
+          <button onclick="toggleView('admin-login')" class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold bg-[#0B192C] hover:bg-[#1E3E62] text-amber-300 border border-amber-400/30">
             <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-amber-400"></i>
-            <span>الإدارة</span>
+            <span>الإدارة (عثمان المهدي)</span>
           </button>
         </div>
 
@@ -159,7 +165,7 @@
           <div class="max-w-3xl space-y-6">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0284C7]/15 border border-[#0284C7]/30 text-[#38BDF8] text-xs font-semibold backdrop-blur-md">
               <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
-              <span>بوابتك الذكية لخدمات السفر والشحن الجوي</span>
+              <span>بوابتك الذكية لخدمات السفر والشحن الجوي لـ 22 دولة عربية</span>
             </div>
 
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white">
@@ -183,15 +189,15 @@
             <div class="pt-8 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-300">
               <div class="flex items-center gap-2">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-                <span>خيارات سفر متعددة ومدروسة</span>
+                <span>تغطية شاملة لـ 22 دولة عربية</span>
               </div>
               <div class="flex items-center gap-2">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400"></i>
-                <span>خدمات متكاملة وشحن أمتعة للأهل</span>
+                <span>شحن أمتعة وطرود عائلية للأهل</span>
               </div>
               <div class="flex items-center gap-2">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400"></i>
-                <span>دعم ومتابعة مستمرة لجميع الطلبات</span>
+                <span>إشراف وإدارة معتمدة ومباشرة</span>
               </div>
             </div>
           </div>
@@ -227,7 +233,7 @@
           <div class="p-6 md:p-8">
             
             <!-- Flight Form -->
-            <form id="search-pane-flights" onsubmit="event.preventDefault(); toggleView('flights');" class="space-y-6 block">
+            <form id="search-pane-flights" onsubmit="event.preventDefault(); submitHomeFlightSearch();" class="space-y-6 block">
               <div class="flex flex-wrap items-center justify-between gap-4 text-xs pb-3 border-b border-slate-100">
                 <div class="flex items-center gap-4 font-semibold text-slate-700">
                   <label class="flex items-center gap-1.5 cursor-pointer">
@@ -239,32 +245,26 @@
                 </div>
                 <div class="flex items-center gap-2">
                   <span class="text-slate-400 font-bold">الدرجة:</span>
-                  <select class="p-1 rounded border border-slate-200 font-bold text-slate-800">
-                    <option>اقتصادية (Economy)</option>
-                    <option>رجال الأعمال (Business)</option>
+                  <select id="homeFlightClass" class="p-1 rounded border border-slate-200 font-bold text-slate-800">
+                    <option value="economy">اقتصادية (Economy)</option>
+                    <option value="business">رجال الأعمال (Business)</option>
+                    <option value="first">الدرجة الأولى (First)</option>
                   </select>
                 </div>
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
-                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">من أين تسافر؟</label>
-                  <select id="homeFlightOrigin" class="w-full bg-transparent font-bold text-slate-900 text-sm focus:outline-none cursor-pointer">
-                    <option value="CAI">القاهرة الدولي (CAI)</option>
-                    <option value="RUH">الرياض - الملك خالد (RUH)</option>
-                    <option value="JED">جدة - الملك عبد العزيز (JED)</option>
-                    <option value="DXB">دبي الدولي (DXB)</option>
+                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">من أين تسافر؟ (22 دولة عربية)</label>
+                  <select id="homeFlightOrigin" class="w-full bg-transparent font-bold text-slate-900 text-xs focus:outline-none cursor-pointer">
+                    <!-- Populated dynamically with Arab airports -->
                   </select>
                 </div>
 
                 <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
-                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">إلى أين تسافر؟</label>
-                  <select id="homeFlightDest" class="w-full bg-transparent font-bold text-slate-900 text-sm focus:outline-none cursor-pointer">
-                    <option value="RUH">الرياض - الملك خالد (RUH)</option>
-                    <option value="JED">جدة - الملك عبد العزيز (JED)</option>
-                    <option value="DXB">دبي الدولي (DXB)</option>
-                    <option value="CAI">القاهرة الدولي (CAI)</option>
-                    <option value="LHR">لندن هيثرو (LHR)</option>
+                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">إلى أين تسافر؟ (22 دولة عربية)</label>
+                  <select id="homeFlightDest" class="w-full bg-transparent font-bold text-slate-900 text-xs focus:outline-none cursor-pointer">
+                    <!-- Populated dynamically with Arab airports -->
                   </select>
                 </div>
 
@@ -286,7 +286,7 @@
               <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
                 <span class="text-xs text-slate-400 flex items-center gap-1.5">
                   <i data-lucide="sparkles" class="w-4 h-4 text-[#0284C7]"></i>
-                  <span>المحرك يعمل في وضع المحاكاة التفاعلية (GDS Simulation Demo)</span>
+                  <span>محرك البحث يغطي مطارات العالم العربي كاملة (GDS Simulation Demo)</span>
                 </span>
                 <button type="submit" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#0B192C] hover:bg-[#1E3E62] text-white font-bold text-sm btn-glow flex items-center justify-center gap-2">
                   <i data-lucide="plane" class="w-4 h-4"></i>
@@ -299,154 +299,128 @@
             <form id="search-pane-cargo" onsubmit="event.preventDefault(); quickSubmitCargo();" class="space-y-6 hidden">
               <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
-                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">بلد ومدينة الإرسال</label>
-                  <input id="qCargoOrigin" type="text" value="القاهرة (مصر)" class="w-full bg-transparent font-bold text-slate-900 text-sm">
+                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">بلد الإرسال</label>
+                  <input id="qCargoOrigin" type="text" value="القاهرة، مصر" class="w-full bg-transparent font-bold text-slate-900 text-xs focus:outline-none">
                 </div>
                 <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
-                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">بلد ومدينة الاستلام</label>
-                  <input id="qCargoDest" type="text" value="الرياض (المملكة العربية السعودية)" class="w-full bg-transparent font-bold text-slate-900 text-sm">
+                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">بلد الاستلام</label>
+                  <input id="qCargoDest" type="text" value="الرياض، السعودية" class="w-full bg-transparent font-bold text-slate-900 text-xs focus:outline-none">
                 </div>
                 <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
-                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">الوزن التقريبي (كجم)</label>
-                  <input id="qCargoWeight" type="number" value="45" class="w-full bg-transparent font-bold text-slate-900 text-sm">
+                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">الوزن التقديري (كجم)</label>
+                  <input id="qCargoWeight" type="number" value="40" class="w-full bg-transparent font-bold text-slate-900 text-sm focus:outline-none">
                 </div>
               </div>
 
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
-                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">الاسم ورقم الهاتف</label>
-                  <input id="qCargoSender" type="text" value="أحمد مصطفى (+201002345678)" class="w-full bg-transparent font-semibold text-xs text-slate-900">
+                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">اسم العميل ورقم الهاتف</label>
+                  <input id="qCargoSender" type="text" value="أحمد مصطفى (+201002345678)" class="w-full bg-transparent font-bold text-slate-900 text-xs focus:outline-none">
                 </div>
                 <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
-                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">وصف الأغراض</label>
-                  <input id="qCargoDesc" type="text" value="حقيبتان سفر أمتعة شخصية وملابس وهدايا عائلية" class="w-full bg-transparent font-semibold text-xs text-slate-900">
+                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">وصف الأمتعة والطرود</label>
+                  <input id="qCargoDesc" type="text" value="حقيبتان ملابس وأغراض شخصية للأهل" class="w-full bg-transparent font-bold text-slate-900 text-xs focus:outline-none">
                 </div>
               </div>
 
-              <div class="flex justify-between items-center pt-2">
-                <span class="text-xs text-slate-500">تخضع الأسعار النهائية لموافقة الناقل الجوي والتخليص الجمركي</span>
+              <div class="flex justify-end pt-2">
                 <button type="submit" class="px-8 py-3.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm btn-gold-glow flex items-center gap-2">
                   <i data-lucide="package" class="w-4 h-4"></i>
-                  <span>طلب تسعير شحن فوري</span>
+                  <span>طلب تسعير الشحن الجوي</span>
                 </button>
               </div>
             </form>
 
-            <!-- Hotels & Transfers Panes -->
-            <div id="search-pane-hotels" class="hidden text-center py-6 space-y-4">
-              <h3 class="text-lg font-bold text-[#0B192C]">استكشف أرقى الفنادق في القاهرة والرياض ودبي</h3>
-              <button onclick="toggleView('hotels')" class="px-6 py-3 rounded-xl bg-teal-600 text-white font-bold text-xs">عرض قائمة الفنادق والمنتجعات</button>
-            </div>
-            <div id="search-pane-transfers" class="hidden text-center py-6 space-y-4">
-              <h3 class="text-lg font-bold text-[#0B192C]">احجز سيارة وسائق خاص بانتظارك في المطار</h3>
-              <button onclick="toggleView('transfers')" class="px-6 py-3 rounded-xl bg-[#0B192C] text-white font-bold text-xs">عرض أسطول التوصيل وحجز سيارة</button>
-            </div>
+            <!-- Hotels Form -->
+            <form id="search-pane-hotels" onsubmit="event.preventDefault(); toggleView('hotels');" class="space-y-6 hidden">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">الوجهة أو المدينة العربية</label>
+                  <select id="homeHotelCity" class="w-full bg-transparent font-bold text-slate-900 text-xs focus:outline-none">
+                    <option value="Cairo">القاهرة، مصر (Cairo)</option>
+                    <option value="Riyadh">الرياض، السعودية (Riyadh)</option>
+                    <option value="Dubai">دبي، الإمارات (Dubai)</option>
+                    <option value="Doha">الدوحة، قطر (Doha)</option>
+                    <option value="Kuwait City">مدينة الكويت (Kuwait)</option>
+                    <option value="Amman">عمّان، الأردن (Amman)</option>
+                    <option value="Manama">المنامة، البحرين (Manama)</option>
+                    <option value="Muscat">مسقط، عُمان (Muscat)</option>
+                    <option value="Marrakech">مراكش، المغرب (Marrakech)</option>
+                    <option value="Beirut">بيروت، لبنان (Beirut)</option>
+                    <option value="Baghdad">بغداد، العراق (Baghdad)</option>
+                    <option value="Tunis">تونس، تونس (Tunis)</option>
+                    <option value="Algiers">الجزائر العاصمة (Algiers)</option>
+                  </select>
+                </div>
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">تاريخ الوصول والمغادرة</label>
+                  <input type="date" value="2026-11-16" class="w-full bg-transparent font-bold text-slate-900 text-xs focus:outline-none">
+                </div>
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">النزلاء والغرف</label>
+                  <select class="w-full bg-transparent font-bold text-slate-900 text-xs focus:outline-none">
+                    <option>1 غرفة • 2 بالغين</option>
+                    <option>1 غرفة • 1 بالغ</option>
+                    <option>2 غرف • عائلة</option>
+                  </select>
+                </div>
+              </div>
+              <div class="flex justify-end pt-2">
+                <button type="submit" class="px-8 py-3.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm btn-glow flex items-center gap-2">
+                  <i data-lucide="building-2" class="w-4 h-4"></i>
+                  <span>استكشاف الفنادق المعتمدة</span>
+                </button>
+              </div>
+            </form>
+
+            <!-- Transfers Form -->
+            <form id="search-pane-transfers" onsubmit="event.preventDefault(); toggleView('transfers');" class="space-y-6 hidden">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">المطار أو نقطة الانطلاق</label>
+                  <input type="text" value="مطار القاهرة الدولي صالة 3" class="w-full bg-transparent font-bold text-slate-900 text-xs focus:outline-none">
+                </div>
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">وجهة الوصول (الفندق)</label>
+                  <input type="text" value="فندق ريتز كارلتون - ميدان التحرير" class="w-full bg-transparent font-bold text-slate-900 text-xs focus:outline-none">
+                </div>
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                  <label class="text-[11px] font-bold uppercase text-slate-500 block mb-1">فئة السيارة</label>
+                  <select class="w-full bg-transparent font-bold text-slate-900 text-xs focus:outline-none">
+                    <option>رجال أعمال فاخرة (Lexus/Mercedes)</option>
+                    <option>سيدان اقتصادية (Corolla)</option>
+                    <option>فان عائلي (Staria)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="flex justify-end pt-2">
+                <button type="submit" class="px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm btn-glow flex items-center gap-2">
+                  <i data-lucide="car" class="w-4 h-4"></i>
+                  <span>حجز سيارة المطار</span>
+                </button>
+              </div>
+            </form>
 
           </div>
         </div>
       </section>
 
-      <!-- FEATURED ROUTES -->
-      <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div class="flex flex-col md:flex-row md:items-end justify-between">
-          <div class="space-y-2">
-            <span class="text-xs font-bold text-[#0284C7] uppercase bg-sky-100 px-3 py-1 rounded-full">المسارات الأكثر طلباً</span>
-            <h2 class="text-3xl font-extrabold text-[#0B192C]">وجهات شائعة للمسافرين والمغتربين</h2>
-            <p class="text-xs sm:text-sm text-slate-500">رحلات يومية متكررة بأسعار مدروسة بين مصر ودول الخليج وأوروبا</p>
-          </div>
-          <button onclick="toggleView('flights')" class="text-sm font-bold text-[#0284C7] hover:underline pt-2 md:pt-0">استعراض كافة الرحلات ➔</button>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div onclick="toggleView('flights')" class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-soft-xl cursor-pointer transition group">
-            <div class="h-48 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-              <span class="absolute top-3 start-3 bg-[#0B192C]/80 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">القاهرة ➔ الرياض</span>
-            </div>
-            <div class="p-5 space-y-2">
-              <h3 class="font-bold text-base text-[#0B192C]">CAI ➔ RUH</h3>
-              <p class="text-xs text-slate-500">خيارات سفر يومية ملائمة للعمل وزيارة الأهل بالمملكة العربية السعودية.</p>
-              <div class="pt-3 border-t border-slate-100 flex justify-between text-xs font-bold text-[#0284C7]">
-                <span>ابحث عن الرحلات</span>
-                <span>←</span>
-              </div>
-            </div>
+      <!-- INTERACTIVE CARGO CALCULATOR TEASER -->
+      <section class="max-w-5xl mx-auto my-20 px-4">
+        <div class="bg-gradient-to-br from-[#0B192C] to-[#1E3E62] text-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-700 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-4">
+            <span class="text-xs font-bold text-amber-400 uppercase bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">وفر حتى 60% من تكلفة الوزن الزائد بالمطار</span>
+            <h3 class="text-2xl sm:text-3xl font-black leading-snug">احسب تكلفة شحن أمتعتك وشنطك للأهل</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">بدلاً من دفع غرامات الوزن الباهظة في المطار عند السفر، اشحن حقائبك الزائدة وطرودك مسبقاً براحة تامة وأمان كامل.</p>
           </div>
 
-          <div onclick="toggleView('flights')" class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-soft-xl cursor-pointer transition group">
-            <div class="h-48 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-              <span class="absolute top-3 start-3 bg-[#0B192C]/80 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">القاهرة ➔ جدة</span>
-            </div>
-            <div class="p-5 space-y-2">
-              <h3 class="font-bold text-base text-[#0B192C]">CAI ➔ JED</h3>
-              <p class="text-xs text-slate-500">بوابة العمرة ومكة المكرمة برحلات مباشرة ومريحة طوال أيام الأسبوع.</p>
-              <div class="pt-3 border-t border-slate-100 flex justify-between text-xs font-bold text-[#0284C7]">
-                <span>ابحث عن الرحلات</span>
-                <span>←</span>
+          <div class="bg-white text-slate-900 p-6 rounded-2xl shadow-lg space-y-4">
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label class="text-xs font-bold text-slate-700">وزن الشحنة المتوقع:</label>
+                <span id="demoWeightLabel" class="text-sm font-black text-[#0284C7]">40 كجم</span>
               </div>
-            </div>
-          </div>
-
-          <div onclick="toggleView('flights')" class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-soft-xl cursor-pointer transition group">
-            <div class="h-48 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-              <span class="absolute top-3 start-3 bg-[#0B192C]/80 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">القاهرة ➔ دبي</span>
-            </div>
-            <div class="p-5 space-y-2">
-              <h3 class="font-bold text-base text-[#0B192C]">CAI ➔ DXB</h3>
-              <p class="text-xs text-slate-500">أفضل مسارات السفر بين مطاري القاهرة ودبي للأعمال والسياحة.</p>
-              <div class="pt-3 border-t border-slate-100 flex justify-between text-xs font-bold text-[#0284C7]">
-                <span>ابحث عن الرحلات</span>
-                <span>←</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CARGO SPOTLIGHT: "أغراضك لأهلك" -->
-      <section class="py-24 bg-[#0B192C] text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div class="lg:col-span-7 space-y-6">
-            <span class="text-xs font-bold text-amber-400 bg-amber-400/20 px-3 py-1 rounded-full uppercase">ميزة الشحن الجوي الحصرية</span>
-            <h2 class="text-3xl sm:text-5xl font-black leading-tight">أغراضك لأهلك... أقرب مما تتخيل</h2>
-            <p class="text-slate-300 text-base leading-relaxed">
-              عايز تبعت شنطك أو هداياك أو طرودك لأهلك؟ مسافرين تساعدك في طلب عروض شحن جوي تناسب احتياجاتك ووجهتك بدون تكاليف الوزن الزائد الباهظة في كاونتر المطار.
-            </p>
-            <div class="space-y-3 pt-2 text-sm text-slate-200">
-              <div class="flex items-center gap-3">
-                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
-                <span>توفير يصل إلى 60% مقارنة بشراء وزن زائد في المطار</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-400"></i>
-                <span>مناولة وتغليف مخصص للأمتعة والطرود الشخصية</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-400"></i>
-                <span>تغطية واسعة من مصر إلى السعودية والإمارات وقطر والكويت وبريطانيا</span>
-              </div>
-            </div>
-            <div class="pt-4">
-              <button onclick="toggleView('cargo')" class="px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-base btn-gold-glow flex items-center gap-2">
-                <i data-lucide="package" class="w-5 h-5"></i>
-                <span>اطلب تسعير شحنتك الآن</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="lg:col-span-5 bg-white text-slate-900 rounded-3xl p-8 shadow-2xl space-y-6">
-            <div class="flex items-center justify-between border-b pb-4 border-slate-100">
-              <h3 class="font-bold text-base text-[#0B192C]">حاسبة مقارنة تكلفة الأمتعة</h3>
-              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">توفير حقيقي</span>
-            </div>
-            <div class="space-y-3">
-              <div class="flex justify-between text-xs font-bold text-slate-700">
-                <span>وزن الأمتعة المقدر:</span>
-                <span id="demoWeightLabel" class="text-base text-[#0B192C]">40 كجم</span>
-              </div>
-              <input type="range" min="15" max="100" value="40" oninput="updateCostCalculator(this.value)" class="w-full accent-amber-500">
+              <input type="range" min="10" max="150" step="5" value="40" oninput="updateCostCalculator(this.value)" class="w-full accent-[#0284C7] cursor-pointer">
             </div>
             <div class="p-4 rounded-2xl bg-slate-50 space-y-2 text-xs">
               <div class="flex justify-between text-slate-500">
@@ -458,7 +432,7 @@
                 <span id="masaferinCostVal" class="text-xl font-black text-amber-600">560 SAR</span>
               </div>
             </div>
-            <button onclick="toggleView('cargo')" class="w-full py-3.5 rounded-xl bg-[#0B192C] text-white font-bold text-xs">
+            <button onclick="toggleView('cargo')" class="w-full py-3.5 rounded-xl bg-[#0B192C] text-white font-bold text-xs btn-glow">
               تأكيد وحجز موعد استلام الشحنة
             </button>
           </div>
@@ -466,7 +440,7 @@
       </section>
 
       <!-- 6 CORE SERVICES -->
-      <section id="services" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section id="services" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div class="text-center max-w-2xl mx-auto space-y-3">
           <span class="text-xs font-bold text-[#0284C7] uppercase bg-sky-100 px-3 py-1 rounded-full">خدمات السفر المتكاملة</span>
           <h2 class="text-3xl font-extrabold text-[#0B192C]">حلول مصممة لراحة بالك وسفرك</h2>
@@ -478,8 +452,8 @@
             <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
               <i data-lucide="plane" class="w-6 h-6"></i>
             </div>
-            <h3 class="font-bold text-base text-[#0B192C]">حجوزات الطيران</h3>
-            <p class="text-xs text-slate-500">قارن خيارات الرحلات واحجز تذكرتك بسهولة وبأفضل الأسعار المتاحة.</p>
+            <h3 class="font-bold text-base text-[#0B192C]">حجوزات الطيران (22 دولة)</h3>
+            <p class="text-xs text-slate-500">قارن خيارات الرحلات واحجز تذكرتك بسهولة وبأفضل الأسعار المتاحة عبر شبكة الطيران العربية.</p>
             <span class="text-xs font-bold text-[#0284C7] block">استكشاف الرحلات ➔</span>
           </div>
 
@@ -488,7 +462,7 @@
               <i data-lucide="package" class="w-6 h-6"></i>
             </div>
             <h3 class="font-bold text-base text-[#0B192C]">الشحن الجوي والأمتعة</h3>
-            <p class="text-xs text-slate-500">اشحن أمتعتك وطرودك وأغراضك إلى وجهتك بكل سهولة وبأمان تام.</p>
+            <p class="text-xs text-slate-500">اشحن أمتعتك وطرودك وأغراضك للأهل إلى وجهتك بكل سهولة وبأمان تام مع تتبع لحظي.</p>
             <span class="text-xs font-bold text-amber-600 block">طلب تسعير شحن ➔</span>
           </div>
 
@@ -497,7 +471,7 @@
               <i data-lucide="building-2" class="w-6 h-6"></i>
             </div>
             <h3 class="font-bold text-base text-[#0B192C]">الفنادق والمنتجعات</h3>
-            <p class="text-xs text-slate-500">اكتشف خيارات إقامة تناسب احتياجاتك وميزانيتك بأسعار تنافسية.</p>
+            <p class="text-xs text-slate-500">اكتشف خيارات إقامة فاخرة في عواصم ومدن العالم العربي بأسعار تفضيلية وضمان خدمة راقية.</p>
             <span class="text-xs font-bold text-teal-600 block">حجز فندق ➔</span>
           </div>
 
@@ -505,8 +479,8 @@
             <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">
               <i data-lucide="car" class="w-6 h-6"></i>
             </div>
-            <h3 class="font-bold text-base text-[#0B192C]">توصيل المطار</h3>
-            <p class="text-xs text-slate-500">رتب انتقالك من وإلى المطار براحة وسهولة مع سائقين موثوقين.</p>
+            <h3 class="font-bold text-base text-[#0B192C]">توصيل المطار والليموزين</h3>
+            <p class="text-xs text-slate-500">رتب انتقالك من وإلى المطار براحة وسهولة مع سائقين موثوقين وسيارة تنتظرك عند الوصول.</p>
             <span class="text-xs font-bold text-indigo-600 block">ترتيب سيارة ➔</span>
           </div>
 
@@ -515,7 +489,7 @@
               <i data-lucide="file-text" class="w-6 h-6"></i>
             </div>
             <h3 class="font-bold text-base text-[#0B192C]">المساعدة في التأشيرات</h3>
-            <p class="text-xs text-slate-500">احصل على المساعدة في تجهيز مستندات وإجراءات التأشيرة لرحلتك القادمة.</p>
+            <p class="text-xs text-slate-500">احصل على المساعدة اللوجستية في تجهيز مستندات وإجراءات التأشيرة وحجز المواعيد الرسمية.</p>
             <span class="text-xs font-bold text-cyan-600 block">طلب إرشاد تأشيرة ➔</span>
           </div>
 
@@ -524,99 +498,43 @@
               <i data-lucide="shield-check" class="w-6 h-6"></i>
             </div>
             <h3 class="font-bold text-base text-[#0B192C]">تأمين السفر الدولي</h3>
-            <p class="text-xs text-slate-500">اكتشف خيارات تأمين السفر المناسبة لرحلتك من شركاء تأمين مرخصين.</p>
+            <p class="text-xs text-slate-500">وثائق تأمين سفر معتمدة من شركات تأمين مرخصة تلبي متطلبات سفارات الشنغن والدول الكبرى.</p>
             <span class="text-xs font-bold text-emerald-600 block">خيارات التأمين ➔</span>
           </div>
         </div>
       </section>
 
-      <!-- HOW IT WORKS -->
-      <section class="py-24 bg-slate-100 border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div class="text-center max-w-2xl mx-auto space-y-2">
-            <h2 class="text-3xl font-extrabold text-[#0B192C]">كيف تعمل المنصة؟</h2>
-            <p class="text-xs sm:text-sm text-slate-500">أربع خطوات سهلة ومباشرة لإتمام أي خدمة تحتاجها</p>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 space-y-3">
-              <span class="text-2xl font-black text-slate-300">01</span>
-              <h3 class="font-bold text-sm text-[#0B192C]">اختار الخدمة</h3>
-              <p class="text-xs text-slate-500">حدد ما تحتاجه: حجز طيران، شحن أمتعة، فندق، أو سيارة مطار.</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 space-y-3">
-              <span class="text-2xl font-black text-slate-300">02</span>
-              <h3 class="font-bold text-sm text-[#0B192C]">أدخل بياناتك</h3>
-              <p class="text-xs text-slate-500">املأ معلومات رحلتك أو شحنتك بدقة من خلال نماذجنا التفاعلية.</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 space-y-3">
-              <span class="text-2xl font-black text-slate-300">03</span>
-              <h3 class="font-bold text-sm text-[#0B192C]">راجع الخيارات</h3>
-              <p class="text-xs text-slate-500">استعرض أفضل عروض الأسعار للشحن وتفاصيل الحجز الشفافة.</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 space-y-3">
-              <span class="text-2xl font-black text-slate-300">04</span>
-              <h3 class="font-bold text-sm text-[#0B192C]">أكّد وتابع طلبك</h3>
-              <p class="text-xs text-slate-500">استلم رقم المتابعة المرجعي وتابع طلبك خطوة بخطوة من لوحة تحكمك.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- TESTIMONIALS (SAMPLE DEMO) -->
-      <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div class="text-center max-w-2xl mx-auto space-y-3">
-          <span class="text-xs font-bold text-amber-700 bg-amber-100 px-3 py-1 rounded-full">ملاحظة: نماذج استرشادية تمثيلية</span>
-          <h2 class="text-3xl font-extrabold text-[#0B192C]">آراء المسافرين (نموذج تجريبي)</h2>
-          <p class="text-xs text-slate-500">توضح تجربة عملائنا وسيتم تفعيل التقييمات المعتمدة فور الإطلاق الرسمي</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <p class="text-xs text-slate-600 italic leading-relaxed">"شحنت شنطتين زيادة للقاهرة بسعر ممتاز وبدون وجع رأس المطار. سرعة الرد والمتابعة كانت ممتازة جداً."</p>
-            <div class="pt-3 border-t border-slate-100">
-              <h4 class="font-bold text-xs text-[#0B192C]">عمر الشريف</h4>
-              <span class="text-[10px] text-slate-400">مهندس مقيم في الرياض</span>
-            </div>
-          </div>
-          <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <p class="text-xs text-slate-600 italic leading-relaxed">"حجز الطيران وتوصيل المطار كان منسق بشكل رائع. المنصة واضحة وسريعة ومريحة في الاستخدام."</p>
-            <div class="pt-3 border-t border-slate-100">
-              <h4 class="font-bold text-xs text-[#0B192C]">سارة عبد الرحمن</h4>
-              <span class="text-[10px] text-slate-400">مسافرة متكررة إلى دبي</span>
-            </div>
-          </div>
-          <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <p class="text-xs text-slate-600 italic leading-relaxed">"خدمة راقية ومساعدة فورية في حجز الإقامة ومتابعة الأمتعة. أشجع بشدة استخدام منصة مسافرين."</p>
-            <div class="pt-3 border-t border-slate-100">
-              <h4 class="font-bold text-xs text-[#0B192C]">د. محمود حسن</h4>
-              <span class="text-[10px] text-slate-400">طبيب مقيم في لندن</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ SECTION -->
-      <section class="py-24 bg-white border-t border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          <div class="text-center space-y-2">
-            <h2 class="text-3xl font-extrabold text-[#0B192C]">الأسئلة الأكثر شيوعاً</h2>
-            <p class="text-xs sm:text-sm text-slate-500">كل ما تحتاج لمعرفته حول خدمات الطيران والشحن</p>
+      <section class="py-20 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div class="text-center max-w-2xl mx-auto space-y-2">
+            <span class="text-xs font-bold text-amber-700 bg-amber-100 px-3 py-1 rounded-full">نماذج استرشادية من تجارب عملائنا</span>
+            <h2 class="text-3xl font-extrabold text-[#0B192C]">آراء المسافرين والمغتربين</h2>
+            <p class="text-xs text-slate-500">ثقة متبادلة وتجربة سفر سلسة خالية من التعقيدات</p>
           </div>
 
-          <div class="space-y-3 text-xs">
-            <details class="p-5 rounded-2xl bg-slate-50 border border-slate-200 cursor-pointer" open>
-              <summary class="font-bold text-sm text-[#0B192C]">كيف أقوم بحجز رحلة طيران عبر مسافرين؟</summary>
-              <p class="mt-3 text-slate-600 leading-relaxed">يمكنك إدخال محطة المغادرة والوصول والتواريخ، استعراض الرحلات المتوفرة، ثم إرسال طلب الحجز لتأكيد التذاكر ومراجعتها في لوحة تحكمك.</p>
-            </details>
-            <details class="p-5 rounded-2xl bg-slate-50 border border-slate-200 cursor-pointer">
-              <summary class="font-bold text-sm text-[#0B192C]">كيف يمكنني شحن الأمتعة والطرود الزائدة للأهل؟</summary>
-              <p class="mt-3 text-slate-600 leading-relaxed">من خلال نموذج الشحن الجوي، أدخل تفاصيل الوزن والأبعاد والمحتويات. يتواصل معك فريق العمليات اللوجستية بعرض سعر معتمد ويوفر لك رقم تتبع وموعد استلام.</p>
-            </details>
-            <details class="p-5 rounded-2xl bg-slate-50 border border-slate-200 cursor-pointer">
-              <summary class="font-bold text-sm text-[#0B192C]">هل تصدر منصة مسافرين التأشيرات رسمياً؟</summary>
-              <p class="mt-3 text-slate-600 leading-relaxed">تقدم مسافرين المساعدة اللوجستية والاستشارية في تجهيز الأوراق وحجز المواعيد، بينما تعود صلاحية قبول أو رفض التأشيرات حصرياً للسفارات والجهات الرسمية.</p>
-            </details>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4">
+              <p class="text-xs text-slate-600 italic leading-relaxed">"شحنت شنطتين زيادة للقاهرة بسعر ممتاز وبدون وجع رأس المطار. سرعة الرد والمتابعة كانت ممتازة جداً."</p>
+              <div class="pt-3 border-t border-slate-100">
+                <h4 class="font-bold text-xs text-[#0B192C]">عمر الشريف</h4>
+                <span class="text-[10px] text-slate-400">مهندس مقيم في الرياض</span>
+              </div>
+            </div>
+            <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4">
+              <p class="text-xs text-slate-600 italic leading-relaxed">"حجز الطيران وتوصيل المطار كان منسق بشكل رائع. المنصة واضحة وسريعة ومريحة في الاستخدام."</p>
+              <div class="pt-3 border-t border-slate-100">
+                <h4 class="font-bold text-xs text-[#0B192C]">سارة عبد الرحمن</h4>
+                <span class="text-[10px] text-slate-400">مسافرة متكررة إلى دبي</span>
+              </div>
+            </div>
+            <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4">
+              <p class="text-xs text-slate-600 italic leading-relaxed">"خدمة راقية ومساعدة فورية في حجز الإقامة ومتابعة الأمتعة. أشجع بشدة استخدام منصة مسافرين."</p>
+              <div class="pt-3 border-t border-slate-100">
+                <h4 class="font-bold text-xs text-[#0B192C]">د. محمود حسن</h4>
+                <span class="text-[10px] text-slate-400">طبيب مقيم في لندن</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -627,98 +545,55 @@
          PAGE: FLIGHTS SEARCH & BOOKING
          ========================================================================= -->
     <div id="view-flights" class="view-page hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-      <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <span class="text-xs font-bold text-[#0284C7]">محرك بحث وتأكيد التذاكر</span>
-          <h2 class="text-2xl font-black text-[#0B192C]">القاهرة (CAI) ➔ الرياض (RUH)</h2>
-          <p class="text-xs text-slate-500">15 نوفمبر 2026 • درجة اقتصادية • محاكاة أنظمة GDS الحقيقية</p>
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <span class="text-xs font-bold text-[#0284C7] flex items-center gap-1.5">
+              <i data-lucide="plane" class="w-4 h-4"></i>
+              <span>محرك بحث الطيران العربي والدولي</span>
+              <span class="bg-sky-100 text-sky-800 text-[10px] px-2 py-0.5 rounded font-bold">22 دولة عربية</span>
+            </span>
+            <h2 id="flightViewRouteTitle" class="text-2xl font-black text-[#0B192C]">القاهرة (CAI) ➔ الرياض (RUH)</h2>
+            <p class="text-xs text-slate-500">15 نوفمبر 2026 • درجة اقتصادية • محاكاة أنظمة GDS الحقيقية المباشرة</p>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="toggleFlightModifier()" class="text-xs font-bold px-4 py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 flex items-center gap-1.5">
+              <i data-lucide="search" class="w-3.5 h-3.5 text-brand-sky"></i>
+              <span>تغيير المسار والمطارات</span>
+            </button>
+          </div>
         </div>
-        <button onclick="toggleView('home')" class="text-xs font-bold px-4 py-2 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700">تعديل البحث</button>
+
+        <!-- Quick Route Editor -->
+        <div id="flightRouteModifier" class="hidden p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+            <div>
+              <label class="font-bold text-slate-700 block mb-1">مطار المغادرة (22 دولة عربية):</label>
+              <select id="fltSelectOrigin" class="w-full p-2.5 rounded-xl border border-slate-300 font-bold bg-white"></select>
+            </div>
+            <div>
+              <label class="font-bold text-slate-700 block mb-1">مطار الوصول (22 دولة عربية):</label>
+              <select id="fltSelectDest" class="w-full p-2.5 rounded-xl border border-slate-300 font-bold bg-white"></select>
+            </div>
+            <div>
+              <label class="font-bold text-slate-700 block mb-1">الدرجة:</label>
+              <select id="fltSelectClass" class="w-full p-2.5 rounded-xl border border-slate-300 font-bold bg-white">
+                <option value="economy">درجة سياحية (Economy)</option>
+                <option value="business">رجال أعمال (Business)</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex justify-end pt-2">
+            <button onclick="applyFlightRouteModifier()" class="px-5 py-2 rounded-xl bg-[#0B192C] text-white text-xs font-bold">
+              تحديث مسار البحث
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- Flight Cards List -->
-      <div class="space-y-4">
-        
-        <!-- Flight 1 -->
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-soft-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div class="space-y-3 flex-1">
-            <div class="flex items-center gap-3">
-              <span class="font-bold text-sm text-[#0B192C]">مصر للطيران (EgyptAir)</span>
-              <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-mono">MS-649</span>
-              <span class="text-xs text-slate-400">Boeing 787-9</span>
-            </div>
-            <div class="flex items-center gap-8">
-              <div>
-                <div class="text-xl font-black text-slate-900 font-mono">08:30</div>
-                <div class="text-xs text-slate-500 font-bold">CAI القاهرة</div>
-              </div>
-              <div class="flex-1 max-w-xs text-center">
-                <span class="text-[11px] text-slate-500">2h 15m</span>
-                <div class="h-0.5 bg-slate-200 my-1 relative">
-                  <div class="w-2 h-2 rounded-full bg-[#0284C7] absolute top-[-3px] right-1/2"></div>
-                </div>
-                <span class="text-[11px] font-bold text-emerald-600">مباشرة بدون توقف</span>
-              </div>
-              <div>
-                <div class="text-xl font-black text-slate-900 font-mono">11:45</div>
-                <div class="text-xs text-slate-500 font-bold">RUH الرياض</div>
-              </div>
-            </div>
-            <div class="text-xs text-slate-500 flex items-center gap-3">
-              <span>الأمتعة: 2 × 23 كجم (مفحوصة)</span>
-              <span>•</span>
-              <span>حقيبة المقصورة: 8 كجم</span>
-            </div>
-          </div>
-          <div class="text-start md:text-end border-t md:border-t-0 md:border-s border-slate-100 pt-4 md:pt-0 md:ps-6">
-            <span class="text-[11px] text-slate-400 block">السعر التقديري</span>
-            <div class="text-2xl font-black text-[#0B192C]">980 <span class="text-xs font-bold">SAR</span></div>
-            <button onclick="bookFlightDemo('مصر للطيران MS-649', 980)" class="mt-2 px-6 py-2.5 rounded-xl bg-[#0B192C] text-white font-bold text-xs btn-glow">
-              طلب حجز التذكرة
-            </button>
-          </div>
-        </div>
-
-        <!-- Flight 2 -->
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-soft-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div class="space-y-3 flex-1">
-            <div class="flex items-center gap-3">
-              <span class="font-bold text-sm text-[#0B192C]">الخطوط السعودية (Saudia)</span>
-              <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-mono">SV-302</span>
-              <span class="text-xs text-slate-400">Airbus A330</span>
-            </div>
-            <div class="flex items-center gap-8">
-              <div>
-                <div class="text-xl font-black text-slate-900 font-mono">13:15</div>
-                <div class="text-xs text-slate-500 font-bold">CAI القاهرة</div>
-              </div>
-              <div class="flex-1 max-w-xs text-center">
-                <span class="text-[11px] text-slate-500">2h 15m</span>
-                <div class="h-0.5 bg-slate-200 my-1 relative">
-                  <div class="w-2 h-2 rounded-full bg-[#0284C7] absolute top-[-3px] right-1/2"></div>
-                </div>
-                <span class="text-[11px] font-bold text-emerald-600">مباشرة بدون توقف</span>
-              </div>
-              <div>
-                <div class="text-xl font-black text-slate-900 font-mono">16:30</div>
-                <div class="text-xs text-slate-500 font-bold">RUH الرياض</div>
-              </div>
-            </div>
-            <div class="text-xs text-slate-500 flex items-center gap-3">
-              <span>الأمتعة: 2 × 23 كجم (مفحوصة)</span>
-              <span>•</span>
-              <span>حقيبة المقصورة: 7 كجم</span>
-            </div>
-          </div>
-          <div class="text-start md:text-end border-t md:border-t-0 md:border-s border-slate-100 pt-4 md:pt-0 md:ps-6">
-            <span class="text-[11px] text-slate-400 block">السعر التقديري</span>
-            <div class="text-2xl font-black text-[#0B192C]">1,040 <span class="text-xs font-bold">SAR</span></div>
-            <button onclick="bookFlightDemo('الخطوط السعودية SV-302', 1040)" class="mt-2 px-6 py-2.5 rounded-xl bg-[#0B192C] text-white font-bold text-xs btn-glow">
-              طلب حجز التذكرة
-            </button>
-          </div>
-        </div>
-
+      <div id="flightsCardsContainer" class="space-y-4">
+        <!-- Rendered dynamically -->
       </div>
     </div>
 
@@ -800,48 +675,17 @@
          PAGE: HOTELS
          ========================================================================= -->
     <div id="view-hotels" class="view-page hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-      <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-2">
-        <span class="text-xs font-bold text-teal-600 uppercase">إقامات وفنادق فاخرة</span>
-        <h2 class="text-2xl font-black text-[#0B192C]">فنادق مختارة بعناية للمسافرين</h2>
-        <p class="text-xs text-slate-500">في القاهرة، الرياض، دبي، وإسطنبول بأفضل الأسعار المتاحة.</p>
+      <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+        <span class="text-xs font-bold text-teal-600 uppercase flex items-center gap-1.5">
+          <i data-lucide="building-2" class="w-4 h-4"></i>
+          <span>إقامات وفنادق فاخرة عبر العالم العربي</span>
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-black text-[#0B192C]">فنادق ومنتجعات مختارة بعناية للمسافرين</h2>
+        <p class="text-xs text-slate-500">في القاهرة، الرياض، دبي، الدوحة، الكويت، عمّان، المنامة، مسقط، مراكش، وبيروت بأفضل الأسعار التفضيلية.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm space-y-4">
-          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" class="h-48 w-full object-cover">
-          <div class="p-5 space-y-3">
-            <h3 class="font-bold text-base text-[#0B192C]">النيل ريتز كارلتون (القاهرة)</h3>
-            <p class="text-xs text-slate-500">إطلالة نيلية مباشرة بجوار ميدان التحرير وبرج القاهرة.</p>
-            <div class="flex justify-between items-center pt-2 border-t">
-              <span class="font-black text-lg text-[#0B192C]">$280 <span class="text-xs font-normal">/ ليلة</span></span>
-              <button onclick="bookHotelDemo('النيل ريتز كارلتون القاهرة', 280)" class="px-4 py-2 rounded-xl bg-teal-600 text-white font-bold text-xs">طلب حجز</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm space-y-4">
-          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" class="h-48 w-full object-cover">
-          <div class="p-5 space-y-3">
-            <h3 class="font-bold text-base text-[#0B192C]">فور سيزونز الرياض (برج المملكة)</h3>
-            <p class="text-xs text-slate-500">فخامة ملكية بإطلالة بانورامية ساحرة على العاصمة السعودية.</p>
-            <div class="flex justify-between items-center pt-2 border-t">
-              <span class="font-black text-lg text-[#0B192C]">$420 <span class="text-xs font-normal">/ ليلة</span></span>
-              <button onclick="bookHotelDemo('فور سيزونز الرياض', 420)" class="px-4 py-2 rounded-xl bg-teal-600 text-white font-bold text-xs">طلب حجز</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm space-y-4">
-          <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80" class="h-48 w-full object-cover">
-          <div class="p-5 space-y-3">
-            <h3 class="font-bold text-base text-[#0B192C]">العنوان وسط مدينة دبي (Address)</h3>
-            <p class="text-xs text-slate-500">إطلالة مباشرة على برج خليفة ونافورة دبي مع ممر لدبي مول.</p>
-            <div class="flex justify-between items-center pt-2 border-t">
-              <span class="font-black text-lg text-[#0B192C]">$390 <span class="text-xs font-normal">/ ليلة</span></span>
-              <button onclick="bookHotelDemo('العنوان دبي', 390)" class="px-4 py-2 rounded-xl bg-teal-600 text-white font-bold text-xs">طلب حجز</button>
-            </div>
-          </div>
-        </div>
+      <div id="hotelsGridContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Rendered dynamically -->
       </div>
     </div>
 
@@ -940,6 +784,285 @@
     </div>
 
     <!-- =========================================================================
+         PAGE: ABOUT US
+         ========================================================================= -->
+    <div id="view-about" class="view-page hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+      <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
+        <span class="text-xs font-bold text-brand-sky uppercase bg-sky-100 px-3 py-1 rounded-full">عن منصة مسافرين</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[#0B192C]">رؤيتنا: تيسير السفر والخدمات اللوجستية في العالم العربي</h2>
+        <p class="text-sm text-slate-600 leading-relaxed max-w-3xl">
+          انطلقت منصة "مسافرين | Masaferin" لتكون المرجع التقني واللوجستي الأول لكل مسافر ومغترب عربي، جامعةً بين تذاكر الطيران، والشحن الجوي الاقتصادي للأمتعة الشخصية، وحجوزات الفنادق الفاخرة، وتوصيل المطار، وتأمين السفر تحت مظلة واحدة معتمدة.
+        </p>
+
+        <!-- Leadership and Roles Distinction -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-slate-200">
+          
+          <!-- Administrator Card -->
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-[#0B192C] text-amber-300 flex items-center justify-center font-black text-lg shadow">
+                ع
+              </div>
+              <div>
+                <span class="text-[11px] font-bold text-amber-600 block uppercase">المشرف العام وإدارة المنصة</span>
+                <h4 class="text-lg font-black text-[#0B192C]">عثمان المهدي</h4>
+                <span class="text-xs text-slate-400 font-mono">othman.mahdi</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              المسؤول التنفيذي عن متابعة سير العمليات اللوجستية، اعتماد عروض أسعار الشحن الجوي، التدقيق الإداري، والامتثال التنظيمي لحجوزات وخدمات المنصة.
+            </p>
+          </div>
+
+          <!-- Designer & Developer Card -->
+          <div class="p-6 rounded-2xl bg-sky-50/60 border border-sky-200 space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-[#0284C7] text-white flex items-center justify-center font-black text-lg shadow">
+                م
+              </div>
+              <div>
+                <span class="text-[11px] font-bold text-[#0284C7] block uppercase">تصميم وتطوير الموقع وهندسة النظم</span>
+                <h4 class="text-lg font-black text-[#0B192C]">المهندس محمد سمير</h4>
+                <span class="text-xs text-slate-500">Lead Product Architect & Developer</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              مهندس المنظومة البرمجية، ومصمم تجربة المستخدم والهوية البصرية والمعمارية الرقمية المتكاملة لمنصة مسافرين.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         PAGE: CONTACT US
+         ========================================================================= -->
+    <div id="view-contact" class="view-page hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+      <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-2">
+        <span class="text-xs font-bold text-[#0284C7] uppercase">مركز الاتصال والمساعدة المباشرة</span>
+        <h2 class="text-3xl font-black text-[#0B192C]">نحن هنا لمساعدتك في أي وقت</h2>
+        <p class="text-xs text-slate-500">فريق خدمة العملاء ومكتب العمليات متاح على مدار الساعة عبر القنوات الرسمية.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-3">
+          <i data-lucide="phone-call" class="w-6 h-6 text-amber-500"></i>
+          <h4 class="font-bold text-sm text-[#0B192C]">الخط الساخن والاتصال المباشر</h4>
+          <p class="text-xs text-slate-500">19820 (مصر) • +20 100 234 5678</p>
+          <span class="text-[11px] text-emerald-600 font-bold">متاح 24/7 على مدار الأسبوع</span>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-3">
+          <i data-lucide="mail" class="w-6 h-6 text-sky-500"></i>
+          <h4 class="font-bold text-sm text-[#0B192C]">البريد الإلكتروني للعمليات</h4>
+          <p class="text-xs text-slate-500">support@masaferin.com</p>
+          <p class="text-xs text-slate-500">cargo@masaferin.com</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-3">
+          <i data-lucide="map-pin" class="w-6 h-6 text-teal-500"></i>
+          <h4 class="font-bold text-sm text-[#0B192C]">المقرات الإقليمية</h4>
+          <p class="text-xs text-slate-500">القاهرة: التجمع الخامس، شارع التسعين</p>
+          <p class="text-xs text-slate-500">الرياض: طريق الملك فهد، برج الفيصلية</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         PAGE: CUSTOMER LOGIN (Dedicated Full-Screen Style)
+         ========================================================================= -->
+    <div id="view-login" class="view-page hidden min-h-[80vh] flex items-center justify-center px-4 py-12">
+      <div class="max-w-md w-full bg-white rounded-3xl p-8 border border-slate-200 shadow-xl space-y-6">
+        
+        <div class="text-center space-y-2">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#0B192C] to-[#0284C7] text-white flex items-center justify-center mx-auto shadow-md">
+            <i data-lucide="plane" class="w-7 h-7 transform -rotate-45"></i>
+          </div>
+          <h2 class="text-2xl font-black text-[#0B192C]">أهلاً بك في مسافرين</h2>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            رحلتك القادمة تبدأ من هنا. سجّل دخولك واستمتع بتجربة سفر متكاملة.
+          </p>
+        </div>
+
+        <!-- Quick Demo Fill -->
+        <button onclick="quickFillCustomerDemo()" class="w-full py-2 px-3 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-800 text-xs font-bold border border-sky-200 flex items-center justify-center gap-2 transition">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#0284C7]"></i>
+          <span>تعبئة سريعة لحساب العميل التجريبي (أحمد الشامي)</span>
+        </button>
+
+        <form onsubmit="event.preventDefault(); submitCustomerLogin();" class="space-y-4 text-xs">
+          <div>
+            <label class="font-bold text-slate-700 block mb-1">البريد الإلكتروني أو اسم المستخدم:</label>
+            <input id="loginEmail" type="text" required placeholder="name@example.com" class="w-full p-3 rounded-xl border border-slate-300 font-semibold focus:outline-none focus:border-[#0284C7]">
+          </div>
+
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <label class="font-bold text-slate-700">كلمة المرور:</label>
+              <a href="javascript:alert('تم إرسال رابط استعادة كلمة المرور إلى بريدك المسجل.')" class="text-[11px] text-[#0284C7] hover:underline font-semibold">نسيت كلمة المرور؟</a>
+            </div>
+            <div class="relative">
+              <input id="loginPassword" type="password" required placeholder="••••••••" class="w-full p-3 rounded-xl border border-slate-300 font-semibold focus:outline-none focus:border-[#0284C7]">
+              <button type="button" onclick="togglePasswordVisibility('loginPassword', 'loginPassIcon')" class="absolute end-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-600">
+                <i id="loginPassIcon" data-lucide="eye" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between text-xs pt-1">
+            <label class="flex items-center gap-2 cursor-pointer text-slate-600">
+              <input type="checkbox" checked class="text-[#0284C7] rounded">
+              <span>تذكر تسجيل دخولي</span>
+            </label>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-[#0B192C] hover:bg-[#1E3E62] text-white font-bold text-sm btn-glow shadow-md">
+            تسجيل الدخول
+          </button>
+        </form>
+
+        <div class="text-center text-xs text-slate-500 pt-2 border-t border-slate-100 space-y-2">
+          <div>
+            <span>ليس لديك حساب؟ </span>
+            <button onclick="toggleView('register')" class="text-[#0284C7] font-bold hover:underline">انضم إلى مسافرين الآن</button>
+          </div>
+          <div>
+            <button onclick="toggleView('admin-login')" class="text-slate-400 hover:text-amber-600 text-[11px] font-semibold">
+              الدخول كمسؤول النظام (عثمان المهدي) ➔
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         PAGE: CUSTOMER REGISTER
+         ========================================================================= -->
+    <div id="view-register" class="view-page hidden min-h-[80vh] flex items-center justify-center px-4 py-12">
+      <div class="max-w-lg w-full bg-white rounded-3xl p-8 border border-slate-200 shadow-xl space-y-6">
+        
+        <div class="text-center space-y-2">
+          <div class="w-12 h-12 rounded-xl bg-[#0284C7] text-white flex items-center justify-center mx-auto shadow-md">
+            <i data-lucide="user-plus" class="w-6 h-6"></i>
+          </div>
+          <h2 class="text-2xl font-black text-[#0B192C]">إنشاء حساب مسافر جديد</h2>
+          <p class="text-xs text-slate-500">
+            انضم إلى منصة مسافرين لإدارة حجوزاتك وشحناتك الجوية ومتابعتها لحظة بلحظة.
+          </p>
+        </div>
+
+        <form onsubmit="event.preventDefault(); submitCustomerRegister();" class="space-y-4 text-xs">
+          <div>
+            <label class="font-bold text-slate-700 block mb-1">الاسم الكامل:</label>
+            <input id="regName" type="text" required placeholder="أحمد مصطفى الشامي" class="w-full p-3 rounded-xl border border-slate-300 font-semibold focus:outline-none focus:border-[#0284C7]">
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="font-bold text-slate-700 block mb-1">البريد الإلكتروني:</label>
+              <input id="regEmail" type="email" required placeholder="name@example.com" class="w-full p-3 rounded-xl border border-slate-300 font-semibold focus:outline-none focus:border-[#0284C7]">
+            </div>
+            <div>
+              <label class="font-bold text-slate-700 block mb-1">رقم الهاتف (مع كود الدولة):</label>
+              <input id="regPhone" type="tel" required placeholder="+20 100 234 5678" class="w-full p-3 rounded-xl border border-slate-300 font-semibold focus:outline-none focus:border-[#0284C7]">
+            </div>
+          </div>
+
+          <div>
+            <label class="font-bold text-slate-700 block mb-1">دولة الإقامة (22 دولة عربية):</label>
+            <select id="regCountry" class="w-full p-3 rounded-xl border border-slate-300 font-semibold bg-white focus:outline-none focus:border-[#0284C7]">
+              <!-- Populated dynamically with Arab countries -->
+            </select>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="font-bold text-slate-700 block mb-1">كلمة المرور:</label>
+              <input id="regPassword" type="password" required placeholder="••••••••" class="w-full p-3 rounded-xl border border-slate-300 font-semibold focus:outline-none focus:border-[#0284C7]">
+            </div>
+            <div>
+              <label class="font-bold text-slate-700 block mb-1">تأكيد كلمة المرور:</label>
+              <input id="regConfirmPassword" type="password" required placeholder="••••••••" class="w-full p-3 rounded-xl border border-slate-300 font-semibold focus:outline-none focus:border-[#0284C7]">
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2 pt-1 text-slate-600">
+            <input type="checkbox" required class="mt-0.5 text-[#0284C7] rounded">
+            <span>أوافق على سياسة الخصوصية وشروط استخدام منصة مسافرين.</span>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-[#0284C7] hover:bg-[#0369A1] text-white font-bold text-sm btn-glow shadow-md">
+            إنشاء حسابي الآن
+          </button>
+        </form>
+
+        <div class="text-center text-xs text-slate-500 pt-2 border-t border-slate-100">
+          <span>لديك حساب بالفعل؟ </span>
+          <button onclick="toggleView('login')" class="text-[#0284C7] font-bold hover:underline">تسجيل الدخول</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         PAGE: ADMIN LOGIN (Dedicated to عثمان المهدي)
+         ========================================================================= -->
+    <div id="view-admin-login" class="view-page hidden min-h-[80vh] flex items-center justify-center px-4 py-12">
+      <div class="max-w-md w-full bg-[#0B192C] text-white rounded-3xl p-8 border border-slate-700 shadow-2xl space-y-6">
+        
+        <div class="text-center space-y-2">
+          <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-400/30 flex items-center justify-center mx-auto shadow-inner">
+            <i data-lucide="shield-check" class="w-7 h-7"></i>
+          </div>
+          <span class="text-[11px] font-bold text-amber-400 uppercase tracking-wider block">بوابة الإدارة المركزية والرقابة</span>
+          <h2 class="text-2xl font-black">تسجيل دخول المسؤول</h2>
+          <p class="text-xs text-slate-400">
+            المسؤول المعين: <span class="text-amber-300 font-bold">عثمان المهدي</span> (Administrator)
+          </p>
+        </div>
+
+        <!-- Quick Demo Fill -->
+        <button onclick="quickFillAdminDemo()" class="w-full py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 text-xs font-bold border border-amber-400/20 flex items-center justify-center gap-2 transition">
+          <i data-lucide="key" class="w-3.5 h-3.5"></i>
+          <span>تعبئة بيانات الاعتماد المخصصة للمسؤول: عثمان المهدي</span>
+        </button>
+
+        <form onsubmit="event.preventDefault(); submitAdminLogin();" class="space-y-4 text-xs">
+          <div>
+            <label class="font-bold text-slate-300 block mb-1">اسم المستخدم للمسؤول:</label>
+            <input id="adminUsername" type="text" required value="othman.mahdi" class="w-full p-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono font-bold focus:outline-none focus:border-amber-400">
+          </div>
+
+          <div>
+            <label class="font-bold text-slate-300 block mb-1">كلمة المرور المشفرة:</label>
+            <div class="relative">
+              <input id="adminPassword" type="password" required placeholder="••••••••" class="w-full p-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-semibold focus:outline-none focus:border-amber-400">
+              <button type="button" onclick="togglePasswordVisibility('adminPassword', 'adminPassIcon')" class="absolute end-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-200">
+                <i id="adminPassIcon" data-lucide="eye" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-300 text-[11px] flex items-start gap-2">
+            <i data-lucide="shield-alert" class="w-4 h-4 shrink-0 mt-0.5"></i>
+            <span>حماية أمنية مشددة: تخضع جميع عمليات الدخول للتدقيق الأمني وسجل العمليات الرقمي (Audit Logging).</span>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-sm btn-gold-glow shadow-lg">
+            دخول لوحة التحكم الإدارية
+          </button>
+        </form>
+
+        <div class="text-center text-xs text-slate-400 pt-2 border-t border-slate-800">
+          <button onclick="toggleView('login')" class="text-slate-400 hover:text-white">
+            العودة لتسجيل دخول العملاء ➔
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =========================================================================
          PAGE: CUSTOMER DASHBOARD
          ========================================================================= -->
     <div id="view-dashboard" class="view-page hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
@@ -948,11 +1071,13 @@
           <div class="w-14 h-14 rounded-2xl bg-[#0B192C] text-white flex items-center justify-center font-black text-xl">أ</div>
           <div>
             <h2 class="text-xl font-black text-[#0B192C]">أحمد مصطفى الشامي (لوحة تحكم المسافر)</h2>
-            <p class="text-xs text-slate-500">ahmed.elshamy@example.com • +20 100 234 5678</p>
+            <p class="text-xs text-slate-500">ahmed.elshamy@example.com • +20 100 234 5678 • مصر (Egypt)</p>
           </div>
         </div>
         <div class="flex gap-2">
-          <button onclick="toggleView('admin')" class="px-4 py-2 rounded-xl bg-[#0B192C] text-white text-xs font-bold">الانتقال للوحة الإدارة</button>
+          <button onclick="toggleView('admin-login')" class="px-4 py-2 rounded-xl bg-[#0B192C] text-amber-300 text-xs font-bold border border-amber-400/30">
+            الانتقال للوحة الإدارة (عثمان المهدي)
+          </button>
         </div>
       </div>
 
@@ -965,14 +1090,19 @@
     </div>
 
     <!-- =========================================================================
-         PAGE: ADMIN OPERATIONS PORTAL
+         PAGE: ADMIN OPERATIONS PORTAL (Assigned to عثمان المهدي)
          ========================================================================= -->
     <div id="view-admin" class="view-page hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-      <div class="bg-[#0B192C] text-white rounded-3xl p-8 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <span class="text-xs font-bold text-amber-400 uppercase">لوحة الإدارة والمتابعة التشغيلية</span>
-          <h2 class="text-2xl font-black">سارة إبراهيم - مديرة العمليات اللوجستية</h2>
-          <p class="text-xs text-slate-300">متابعة عروض أسعار الشحن، إصدار تذاكر الطيران، واعتماد الحجوزات</p>
+      <div class="bg-[#0B192C] text-white rounded-3xl p-8 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4 border border-slate-700">
+        <div class="space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-amber-400 uppercase bg-amber-400/10 px-2.5 py-0.5 rounded-full border border-amber-400/20">
+              لوحة الإدارة والرقابة التشغيلية
+            </span>
+            <span class="text-xs text-slate-400 font-mono">othman.mahdi</span>
+          </div>
+          <h2 class="text-2xl font-black">عثمان المهدي - المشرف العام والمدير التنفيذي للمنصة</h2>
+          <p class="text-xs text-slate-300">متابعة عروض أسعار الشحن الجوي، تذاكر الطيران، الفنادق، واعتماد العمليات في 22 دولة عربية.</p>
         </div>
         <div class="flex gap-2">
           <button onclick="exportCSVDemo()" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/20">تصدير CSV</button>
@@ -995,7 +1125,7 @@
           <span id="kpiTickets" class="text-2xl font-black text-blue-600">5</span>
         </div>
         <div class="bg-white p-5 rounded-2xl border border-slate-200">
-          <span class="text-[11px] font-bold text-slate-400 block uppercase">إجمالي الطلبات</span>
+          <span class="text-[11px] font-bold text-slate-400 block uppercase">إجمالي الطلبات بالمنصة</span>
           <span id="kpiTotal" class="text-2xl font-black text-[#0B192C]">12</span>
         </div>
       </div>
@@ -1003,8 +1133,13 @@
       <!-- Admin Table -->
       <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
         <div class="p-6 border-b border-slate-200 flex justify-between items-center">
-          <h3 class="font-bold text-base text-[#0B192C]">إدارة وتعديل تسعير الشحن والطلبات</h3>
-          <span class="text-xs text-slate-400">انقر على "تعديل وتسعير" لتغيير الحالة وحفظ السعر فوراً</span>
+          <div>
+            <h3 class="font-bold text-base text-[#0B192C]">إدارة وتعديل تسعير الشحن والطلبات</h3>
+            <span class="text-xs text-slate-400">انقر على "تعديل وتسعير" لتغيير الحالة واعتماد السعر للمسافر فوراً</span>
+          </div>
+          <span class="text-xs font-mono font-bold text-amber-600 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+            المدير المسؤول: عثمان المهدي
+          </span>
         </div>
         <div class="overflow-x-auto">
           <table class="w-full text-start text-xs">
@@ -1040,7 +1175,7 @@
             <span class="font-black text-xl text-white">مسافرين | Masaferin</span>
           </div>
           <p class="text-xs text-slate-400 leading-relaxed">
-            منصة السفر الشاملة لحجز تذاكر الطيران، الشحن الجوي للأمتعة والطرود الشخصية، حجز الفنادق، وتوصيل المطار.
+            منصة السفر الشاملة لحجز تذاكر الطيران، الشحن الجوي للأمتعة والطرود الشخصية، حجز الفنادق، وتوصيل المطار عبر 22 دولة عربية.
           </p>
         </div>
 
@@ -1065,28 +1200,119 @@
         </div>
 
         <div>
-          <h4 class="text-sm font-bold text-white mb-3">السياسات والشفافية</h4>
+          <h4 class="text-sm font-bold text-white mb-3">الإدارة والمسؤوليات</h4>
           <ul class="space-y-2 text-xs text-slate-400">
+            <li>المشرف العام: <span class="text-white font-bold">عثمان المهدي</span></li>
+            <li><a href="javascript:toggleView('admin-login')" class="hover:text-amber-300 text-amber-400/90 font-semibold">بوابة الإدارة المعتمدة ➔</a></li>
             <li>سياسة الخصوصية وأمان البيانات</li>
-            <li>شروط وأحكام الشحن الجوي</li>
-            <li>سياسة الإلغاء وتعديل الحجوزات</li>
+            <li>شروط وأحكام الشحن الجوي الدولي</li>
           </ul>
         </div>
       </div>
 
-      <div class="pt-6 border-t border-slate-800 text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <span>جميع الحقوق محفوظة لمنصة مسافرين © 2026. تعمل المنصة كوسيط تقني مرخص مع خطوط الطيران والجهات المعتمدة.</span>
-        <span>Masaferin v1.0.0 Production Architecture</span>
+      <!-- Designer & Developer Credit + Rights -->
+      <div class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+        <div>
+          <span>جميع الحقوق محفوظة لمنصة مسافرين © 2026. تعمل المنصة كوسيط تقني مرخص مع خطوط الطيران والجهات المعتمدة.</span>
+        </div>
+
+        <!-- Professional Website Designer Credit -->
+        <div class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-amber-300 font-bold text-xs flex items-center gap-2">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
+          <span>تصميم وتطوير المهندس محمد سمير</span>
+          <span class="text-slate-600">|</span>
+          <span class="text-slate-400 font-normal">Designed and Developed by Engineer Mohamed Samir</span>
+        </div>
       </div>
     </div>
   </footer>
 
   <!-- ================= CLIENT LOGIC & DATA STATE ================= -->
   <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
+    // 22 Arab Countries & Airports Dataset
+    const ARAB_COUNTRIES_DATA = [
+      { id: 'egypt', nameAr: 'مصر', nameEn: 'Egypt', flag: '🇪🇬', code: '+20', airports: [
+        { code: 'CAI', city: 'القاهرة', name: 'مطار القاهرة الدولي' },
+        { code: 'HBE', city: 'الإسكندرية', name: 'مطار برج العرب' },
+        { code: 'SSH', city: 'شرم الشيخ', name: 'مطار شرم الشيخ' },
+        { code: 'HRG', city: 'الغردقة', name: 'مطار الغردقة الدولي' }
+      ]},
+      { id: 'saudi', nameAr: 'السعودية', nameEn: 'Saudi Arabia', flag: '🇸🇦', code: '+966', airports: [
+        { code: 'RUH', city: 'الرياض', name: 'مطار الملك خالد الدولي' },
+        { code: 'JED', city: 'جدة', name: 'مطار الملك عبد العزيز الدولي' },
+        { code: 'DMM', city: 'الدمام', name: 'مطار الملك فهد الدولي' },
+        { code: 'MED', city: 'المدينة المنورة', name: 'مطار الأمير محمد بن عبد العزيز' }
+      ]},
+      { id: 'uae', nameAr: 'الإمارات', nameEn: 'UAE', flag: '🇦🇪', code: '+971', airports: [
+        { code: 'DXB', city: 'دبي', name: 'مطار دبي الدولي' },
+        { code: 'AUH', city: 'أبوظبي', name: 'مطار زايد الدولي' },
+        { code: 'SHJ', city: 'الشارقة', name: 'مطار الشارقة الدولي' }
+      ]},
+      { id: 'qatar', nameAr: 'قطر', nameEn: 'Qatar', flag: '🇶🇦', code: '+974', airports: [
+        { code: 'DOH', city: 'الدوحة', name: 'مطار حمد الدولي' }
+      ]},
+      { id: 'kuwait', nameAr: 'الكويت', nameEn: 'Kuwait', flag: '🇰🇼', code: '+965', airports: [
+        { code: 'KWI', city: 'الكويت', name: 'مطار الكويت الدولي' }
+      ]},
+      { id: 'bahrain', nameAr: 'البحرين', nameEn: 'Bahrain', flag: '🇧🇭', code: '+973', airports: [
+        { code: 'BAH', city: 'المنامة', name: 'مطار البحرين الدولي' }
+      ]},
+      { id: 'oman', nameAr: 'عُمان', nameEn: 'Oman', flag: '🇴🇲', code: '+968', airports: [
+        { code: 'MCT', city: 'مسقط', name: 'مطار مسقط الدولي' },
+        { code: 'SLL', city: 'صلالة', name: 'مطار صلالة الدولي' }
+      ]},
+      { id: 'jordan', nameAr: 'الأردن', nameEn: 'Jordan', flag: '🇯🇴', code: '+962', airports: [
+        { code: 'AMM', city: 'عمّان', name: 'مطار الملكة علياء الدولي' }
+      ]},
+      { id: 'morocco', nameAr: 'المغرب', nameEn: 'Morocco', flag: '🇲🇦', code: '+212', airports: [
+        { code: 'CMN', city: 'الدار البيضاء', name: 'مطار محمد الخامس الدولي' },
+        { code: 'RAK', city: 'مراكش', name: 'مطار مراكش المنارة' }
+      ]},
+      { id: 'lebanon', nameAr: 'لبنان', nameEn: 'Lebanon', flag: '🇱🇧', code: '+961', airports: [
+        { code: 'BEY', city: 'بيروت', name: 'مطار رفيق الحريري الدولي' }
+      ]},
+      { id: 'iraq', nameAr: 'العراق', nameEn: 'Iraq', flag: '🇮🇶', code: '+964', airports: [
+        { code: 'BGW', city: 'بغداد', name: 'مطار بغداد الدولي' },
+        { code: 'EBL', city: 'أربيل', name: 'مطار أربيل الدولي' },
+        { code: 'BSR', city: 'البصرة', name: 'مطار البصرة الدولي' }
+      ]},
+      { id: 'tunisia', nameAr: 'تونس', nameEn: 'Tunisia', flag: '🇹🇳', code: '+216', airports: [
+        { code: 'TUN', city: 'تونس', name: 'مطار تونس قرطاج الدولي' }
+      ]},
+      { id: 'algeria', nameAr: 'الجزائر', nameEn: 'Algeria', flag: '🇩🇿', code: '+213', airports: [
+        { code: 'ALG', city: 'الجزائر العاصمة', name: 'مطار هواري بومدين الدولي' }
+      ]},
+      { id: 'libya', nameAr: 'ليبيا', nameEn: 'Libya', flag: '🇱🇾', code: '+218', airports: [
+        { code: 'BEN', city: 'بنغازي', name: 'مطار بنينا الدولي' },
+        { code: 'MJI', city: 'طرابلس', name: 'مطار معيتيقة الدولي' }
+      ]},
+      { id: 'sudan', nameAr: 'السودان', nameEn: 'Sudan', flag: '🇸🇩', code: '+249', airports: [
+        { code: 'PZU', city: 'بورتسودان', name: 'مطار بورتسودان الدولي' }
+      ]},
+      { id: 'yemen', nameAr: 'اليمن', nameEn: 'Yemen', flag: '🇾🇪', code: '+967', airports: [
+        { code: 'ADE', city: 'عدن', name: 'مطار عدن الدولي' }
+      ]},
+      { id: 'syria', nameAr: 'سوريا', nameEn: 'Syria', flag: '🇸🇾', code: '+963', airports: [
+        { code: 'DAM', city: 'دمشق', name: 'مطار دمشق الدولي' }
+      ]},
+      { id: 'palestine', nameAr: 'فلسطين', nameEn: 'Palestine', flag: '🇵🇸', code: '+970', airports: [
+        { code: 'JRS', city: 'القدس', name: 'مطار القدس الدولي' }
+      ]},
+      { id: 'mauritania', nameAr: 'موريتانيا', nameEn: 'Mauritania', flag: '🇲🇷', code: '+222', airports: [
+        { code: 'NKC', city: 'نواكشوط', name: 'مطار نواكشوط الدولي' }
+      ]},
+      { id: 'somalia', nameAr: 'الصومال', nameEn: 'Somalia', flag: '🇸🇴', code: '+252', airports: [
+        { code: 'MGQ', city: 'مقديشو', name: 'مطار آدم عدي الدولي' }
+      ]},
+      { id: 'djibouti', nameAr: 'جيبوتي', nameEn: 'Djibouti', flag: '🇩🇯', code: '+253', airports: [
+        { code: 'JIB', city: 'جيبوتي', name: 'مطار جيبوتي أمبولي' }
+      ]},
+      { id: 'comoros', nameAr: 'جزر القمر', nameEn: 'Comoros', flag: '🇰🇲', code: '+269', airports: [
+        { code: 'HAH', city: 'موروني', name: 'مطار الأمير سعيد إبراهيم' }
+      ]}
+    ];
 
-    // Default Seed Data Store
+    // Seed Data Store
     let STORE = {
       lang: 'ar',
       requests: [
@@ -1112,6 +1338,46 @@
       renderAdminTable();
     }
 
+    // Populate Airport Selectors
+    function populateAirportSelectors() {
+      const selectors = ['homeFlightOrigin', 'homeFlightDest', 'fltSelectOrigin', 'fltSelectDest'];
+      selectors.forEach(selId => {
+        const el = document.getElementById(selId);
+        if (!el) return;
+        el.innerHTML = '';
+        ARAB_COUNTRIES_DATA.forEach(country => {
+          const group = document.createElement('optgroup');
+          group.label = `${country.flag} ${country.nameAr}`;
+          country.airports.forEach(a => {
+            const opt = document.createElement('option');
+            opt.value = a.code;
+            opt.textContent = `${a.code} - ${a.city} (${a.name})`;
+            group.appendChild(opt);
+          });
+          el.appendChild(group);
+        });
+      });
+
+      // Default selections
+      const hOrig = document.getElementById('homeFlightOrigin');
+      const hDest = document.getElementById('homeFlightDest');
+      if (hOrig) hOrig.value = 'CAI';
+      if (hDest) hDest.value = 'RUH';
+
+      const fOrig = document.getElementById('fltSelectOrigin');
+      const fDest = document.getElementById('fltSelectDest');
+      if (fOrig) fOrig.value = 'CAI';
+      if (fDest) fDest.value = 'RUH';
+
+      // Populate registration country selector
+      const regCountryEl = document.getElementById('regCountry');
+      if (regCountryEl) {
+        regCountryEl.innerHTML = ARAB_COUNTRIES_DATA.map(c => 
+          `<option value="${c.nameAr} (${c.nameEn})">${c.flag} ${c.nameAr} (${c.nameEn})</option>`
+        ).join('');
+      }
+    }
+
     // View Navigation
     function toggleView(viewName) {
       document.querySelectorAll('.view-page').forEach(el => el.classList.add('hidden'));
@@ -1122,6 +1388,8 @@
       }
       if (viewName === 'dashboard') renderDashboard();
       if (viewName === 'admin') renderAdminTable();
+      if (viewName === 'flights') renderFlightsCards();
+      if (viewName === 'hotels') renderHotelsGrid();
       lucide.createIcons();
     }
 
@@ -1148,6 +1416,61 @@
       lucide.createIcons();
     }
 
+    // Password Visibility Toggle
+    function togglePasswordVisibility(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      if (!input) return;
+      if (input.type === 'password') {
+        input.type = 'text';
+        if (icon) icon.setAttribute('data-lucide', 'eye-off');
+      } else {
+        input.type = 'password';
+        if (icon) icon.setAttribute('data-lucide', 'eye');
+      }
+      lucide.createIcons();
+    }
+
+    // Demo Autofill Helpers
+    function quickFillCustomerDemo() {
+      const email = document.getElementById('loginEmail');
+      const pass = document.getElementById('loginPassword');
+      if (email) email.value = 'ahmed.elshamy@example.com';
+      if (pass) pass.value = 'TravelPass2026!';
+    }
+
+    function quickFillAdminDemo() {
+      const user = document.getElementById('adminUsername');
+      const pass = document.getElementById('adminPassword');
+      if (user) user.value = 'othman.mahdi';
+      if (pass) pass.value = 'Admin#Othman2026';
+    }
+
+    // Authentication Handlers
+    function submitCustomerLogin() {
+      const email = document.getElementById('loginEmail').value;
+      alert(`مرحباً بك يا أحمد مصطفى الشامي!\nتم تسجيل الدخول بنجاح بحساب العميل المعتمد.`);
+      toggleView('dashboard');
+    }
+
+    function submitCustomerRegister() {
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      const country = document.getElementById('regCountry').value;
+      alert(`تم إنشاء حسابك بنجاح للمسافر: ${name}\nبلد الإقامة: ${country}\nتم تسجيل الدخول وتوجيهك إلى لوحة التحكم.`);
+      toggleView('dashboard');
+    }
+
+    function submitAdminLogin() {
+      const username = document.getElementById('adminUsername').value;
+      if (username.toLowerCase().includes('othman')) {
+        alert(`أهلاً بك يا أستاذ عثمان المهدي.\nتم التحقق من الصلاحيات الإدارية بنجاح.`);
+        toggleView('admin');
+      } else {
+        alert('اسم المستخدم غير مصرح له بالإدارة المركزية. الحساب المعتمد هو: othman.mahdi');
+      }
+    }
+
     // Interactive Cargo Cost Calculator
     function updateCostCalculator(val) {
       document.getElementById('demoWeightLabel').textContent = val + ' كجم';
@@ -1155,6 +1478,126 @@
       const masaferinCost = val * 14;
       document.getElementById('airportCostVal').textContent = airportCost.toLocaleString() + ' SAR';
       document.getElementById('masaferinCostVal').textContent = masaferinCost.toLocaleString() + ' SAR';
+    }
+
+    // Home Flight Search Submit
+    let currentFlightOrigin = 'CAI';
+    let currentFlightDest = 'RUH';
+
+    function submitHomeFlightSearch() {
+      currentFlightOrigin = document.getElementById('homeFlightOrigin').value;
+      currentFlightDest = document.getElementById('homeFlightDest').value;
+      updateFlightTitle();
+      toggleView('flights');
+    }
+
+    function toggleFlightModifier() {
+      const panel = document.getElementById('flightRouteModifier');
+      if (panel) panel.classList.toggle('hidden');
+    }
+
+    function applyFlightRouteModifier() {
+      currentFlightOrigin = document.getElementById('fltSelectOrigin').value;
+      currentFlightDest = document.getElementById('fltSelectDest').value;
+      toggleFlightModifier();
+      updateFlightTitle();
+      renderFlightsCards();
+    }
+
+    function updateFlightTitle() {
+      const titleEl = document.getElementById('flightViewRouteTitle');
+      if (titleEl) {
+        titleEl.textContent = `${currentFlightOrigin} ➔ ${currentFlightDest}`;
+      }
+    }
+
+    // Render Flight Cards
+    function renderFlightsCards() {
+      const container = document.getElementById('flightsCardsContainer');
+      if (!container) return;
+
+      const mockAirlines = [
+        { name: 'مصر للطيران | EgyptAir', num: 'MS-649', plane: 'Boeing 787-9', dep: '08:30', arr: '11:45', dur: '2h 15m', fare: 980, baggage: '2 × 23 كجم' },
+        { name: 'الخطوط السعودية | Saudia', num: 'SV-302', plane: 'Airbus A330-300', dep: '13:15', arr: '16:30', dur: '2h 15m', fare: 1040, baggage: '2 × 23 كجم' },
+        { name: 'طيران ناس | Flynas', num: 'XY-560', plane: 'Airbus A320neo', dep: '19:40', arr: '22:55', dur: '2h 15m', fare: 790, baggage: '20 كجم' },
+        { name: 'طيران الإمارات | Emirates', num: 'EK-924', plane: 'Boeing 777-300ER', dep: '10:00', arr: '16:15', dur: '5h 15m (ترانزيت دبي)', fare: 1350, baggage: '30 كجم' }
+      ];
+
+      container.innerHTML = mockAirlines.map(f => `
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-soft-xl flex flex-col md:flex-row md:items-center justify-between gap-6 transition">
+          <div class="space-y-3 flex-1">
+            <div class="flex items-center gap-3">
+              <span class="font-bold text-sm text-[#0B192C]">${f.name}</span>
+              <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-mono">${f.num}</span>
+              <span class="text-xs text-slate-400">${f.plane}</span>
+            </div>
+            <div class="flex items-center gap-8">
+              <div>
+                <div class="text-xl font-black text-slate-900 font-mono">${f.dep}</div>
+                <div class="text-xs text-slate-500 font-bold">${currentFlightOrigin}</div>
+              </div>
+              <div class="flex-1 max-w-xs text-center">
+                <span class="text-[11px] text-slate-500">${f.dur}</span>
+                <div class="h-0.5 bg-slate-200 my-1 relative">
+                  <div class="w-2 h-2 rounded-full bg-[#0284C7] absolute top-[-3px] right-1/2"></div>
+                </div>
+                <span class="text-[11px] font-bold text-emerald-600">رحلة معتمدة ومؤكدة</span>
+              </div>
+              <div>
+                <div class="text-xl font-black text-slate-900 font-mono">${f.arr}</div>
+                <div class="text-xs text-slate-500 font-bold">${currentFlightDest}</div>
+              </div>
+            </div>
+            <div class="text-xs text-slate-500 flex items-center gap-3">
+              <span>الأمتعة المفحوصة: ${f.baggage}</span>
+              <span>•</span>
+              <span>حقيبة مقصورة: 8 كجم</span>
+            </div>
+          </div>
+          <div class="text-start md:text-end border-t md:border-t-0 md:border-s border-slate-100 pt-4 md:pt-0 md:ps-6">
+            <span class="text-[11px] text-slate-400 block">السعر التقديري للمسافر</span>
+            <div class="text-2xl font-black text-[#0B192C]">${f.fare} <span class="text-xs font-bold">SAR</span></div>
+            <button onclick="bookFlightDemo('${f.name}', ${f.fare})" class="mt-2 px-6 py-2.5 rounded-xl bg-[#0B192C] text-white font-bold text-xs btn-glow">
+              طلب حجز التذكرة
+            </button>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    // Render Hotels Grid
+    function renderHotelsGrid() {
+      const container = document.getElementById('hotelsGridContainer');
+      if (!container) return;
+
+      const hotelsList = [
+        { name: 'فندق النيل ريتز كارلتون', city: 'القاهرة، مصر', price: 280, img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80', desc: 'إطلالة نيلية ساحرة بجوار ميدان التحرير وبرج القاهرة.' },
+        { name: 'فندق فور سيزونز الرياض', city: 'الرياض، السعودية', price: 420, img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80', desc: 'فخامة ملكية أعلى برج المملكة مع إطلالة بانورامية للعاصمة.' },
+        { name: 'فندق العنوان وسط مدينة دبي', city: 'دبي، الإمارات', price: 390, img: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80', desc: 'إطلالة مباشرة على برج خليفة ونافورة دبي مع ممر لدبي مول.' },
+        { name: 'منتجع قرية الشرق وسبا ريتز كارلتون', city: 'الدوحة، قطر', price: 340, img: 'https://images.unsplash.com/photo-1578895101408-1a36b834405b?auto=format&fit=crop&w=600&q=80', desc: 'منتجع ساحلي عربي تراثي فاخر على شاطئ الدوحة الغربي.' },
+        { name: 'فندق فور سيزونز الكويت في برج الشايع', city: 'الكويت، الكويت', price: 360, img: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80', desc: 'تحفة معمارية في قلب العاصمة الكويتية مع أرقى المطاعم.' },
+        { name: 'فندق المأمونية مراكش', city: 'مراكش، المغرب', price: 510, img: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80', desc: 'قصر أسطوري وحدائق تاريخية تجسد الضيافة المغربية الملكية.' },
+        { name: 'فندق سانت ريجيس عمّان', city: 'عمّان، الأردن', price: 290, img: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80', desc: 'إقامة راقية في حي عبدون الدبلوماسي مع خدمة الخادم الشخصي.' },
+        { name: 'فندق ريتز كارلتون البحرين', city: 'المنامة، البحرين', price: 350, img: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=600&q=80', desc: 'منتجع ساحلي خاص وبحيرة لاجون ومارينا لليخوت في ضاحية السيف.' },
+        { name: 'قصر البستان ريتز كارلتون مسقط', city: 'مسقط، عُمان', price: 380, img: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=600&q=80', desc: 'قصر ساحر محاط بجبال الحجر وبحر عُمان مع شاطئ خاص كيلومتر.' }
+      ];
+
+      container.innerHTML = hotelsList.map(h => `
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-soft-xl transition space-y-4">
+          <img src="${h.img}" class="h-48 w-full object-cover">
+          <div class="p-5 space-y-3">
+            <span class="text-xs text-teal-600 font-bold">${h.city}</span>
+            <h3 class="font-bold text-base text-[#0B192C]">${h.name}</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">${h.desc}</p>
+            <div class="flex justify-between items-center pt-3 border-t">
+              <span class="font-black text-lg text-[#0B192C]">$${h.price} <span class="text-xs font-normal">/ ليلة</span></span>
+              <button onclick="bookHotelDemo('${h.name}', ${h.price})" class="px-4 py-2 rounded-xl bg-teal-600 text-white font-bold text-xs btn-glow">طلب حجز</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
     }
 
     // Quick Cargo Submission from Homepage
@@ -1219,7 +1662,7 @@
         ref: ref,
         type: 'flight',
         title: `حجز طيران: ${airline}`,
-        details: 'القاهرة ➔ الرياض • مسافر بالغ • درجة اقتصادية',
+        details: `${currentFlightOrigin} ➔ ${currentFlightDest} • مسافر بالغ • درجة اقتصادية`,
         quote: price + ' SAR',
         status: 'قيد المراجعة',
         carrier: airline,
@@ -1389,7 +1832,7 @@
             <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-100 text-slate-800">${r.status}</span>
           </td>
           <td class="p-4 text-end">
-            <button onclick="adminEditPrompt('${r.id}')" class="px-3 py-1.5 rounded-lg bg-[#0B192C] text-white text-[11px] font-bold">
+            <button onclick="adminEditPrompt('${r.id}')" class="px-3 py-1.5 rounded-lg bg-[#0B192C] text-amber-300 hover:bg-slate-800 text-[11px] font-bold border border-amber-400/30">
               تعديل وتسعير
             </button>
           </td>
@@ -1401,18 +1844,18 @@
       const item = STORE.requests.find(r => r.id === id);
       if (!item) return;
 
-      const newStatus = prompt('تحديث حالة الطلب (مثلاً: تم إعداد عرض السعر / مؤكد / تم إصدار التذكرة):', item.status);
+      const newStatus = prompt(`تحديث حالة الطلب بواسطة المشرف (عثمان المهدي):`, item.status);
       if (newStatus) item.status = newStatus;
 
-      const newQuote = prompt('تحديث مبلغ عرض السعر:', item.quote);
+      const newQuote = prompt(`تحديث مبلغ عرض السعر المعتمد:`, item.quote);
       if (newQuote) item.quote = newQuote;
 
       saveStore();
-      alert('تم تحديث بيانات الطلب بنجاح في النظام.');
+      alert('تم تحديث بيانات الطلب بنجاح في سجلات النظام واعتمادها.');
     }
 
     function exportCSVDemo() {
-      alert('تم استخراج ملف CSV بجميع الطلبات التشغيلية.');
+      alert('تم استخراج ملف CSV بجميع الطلبات التشغيلية المعتمدة بواسطة عثمان المهدي.');
     }
 
     // Language Toggle
@@ -1422,18 +1865,22 @@
         document.documentElement.dir = 'ltr';
         document.documentElement.lang = 'en';
         document.getElementById('langBtnText').textContent = 'عربي';
-        document.getElementById('topNoticeText').textContent = 'Masaferin Travel Platform Running in Full Production Architecture';
+        document.getElementById('topNoticeText').textContent = 'Masaferin Travel Platform Running across 22 Arab States';
       } else {
         document.documentElement.dir = 'rtl';
         document.documentElement.lang = 'ar';
         document.getElementById('langBtnText').textContent = 'English';
-        document.getElementById('topNoticeText').textContent = 'منصة مسافرين تعمل بنجاح في الوضع التفاعلي المباشر (Production Architecture)';
+        document.getElementById('topNoticeText').textContent = 'منصة مسافرين تعمل بنجاح في الوضع التفاعلي المباشر (22 دولة عربية)';
       }
     }
 
     // Initial load
+    populateAirportSelectors();
     renderDashboard();
     renderAdminTable();
+    renderFlightsCards();
+    renderHotelsGrid();
+    lucide.createIcons();
   </script>
 </body>
 </html>
